@@ -1,0 +1,237 @@
+{% extends 'hospital/base.html' %}
+{% load static %}
+{% block hero %}
+{% comment %} <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner w-100">
+      
+      <div class="carousel-item">
+        <img src="{% static 'hospital/images/hero1.png' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'hospital/images/bg.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+  </div> {% endcomment %}
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'hospital/images/hero1.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'hospital/images/bg2.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+<!--      <div class="carousel-item">-->
+<!--        <img src="{% static 'hospital/images/hero1.png' %}" class="d-block w-100" alt="...">-->
+<!--      </div>-->
+    </div>
+
+
+{% endblock hero %}
+
+{% block content %}
+<section class="services" id="services">
+  <div class="text-center p-3 pt-4" > 
+    <h3>Our Key Feature</h3>
+    <p>Take a look at some of our key feature</p>
+  </div>
+  <div class="serviceFeature">
+    <div>
+        <a href="https://www.vezeeta.co.ke/"><i class="fa-solid fa-heart-pulse"></i></a>
+      <h6>Cardiology</h6></div>
+    <div>
+      <a href="https://optica.africa/"><i class="fa-solid fa-eye"></i></a>
+      <h6>Optician</h6></div>
+    <div>
+      <a href="https://dentalsmiles.co.ke/"><i class="fa-solid fa-tooth"></i></a>
+      <h6>Dentist</h6></div>
+    <div>
+      <a href="https://www.goodlife.co.ke/" ><i class="fa-solid fa-tablets"></i></a>
+      <h6>Pharmacy</h6></div>
+    <div>
+      <a href="https://www.eplus.co.ke/" ><i class="fa-solid fa-ambulance"></i></a>
+      <h6>Ambulance</h6></div>
+<!--    <div>-->
+<!--      <i class="fa-solid fa-thumbs-up"></i>-->
+<!--      <h6>High Quality Treatement</h6></div>-->
+  </div>
+  
+</section>
+<div class="about" id="about">
+ <div>
+  <img src="{% static 'hospital/images/bg2.jpg' %}" alt="">
+ </div>
+ <div>
+  <h3>About the Hospital</h3>
+  <p>Welcome to Hospital Management System, a comprehensive solution designed to streamline healthcare operations and enhance patient care. Our platform integrates advanced features for appointment scheduling, medical records management, billing, and staff coordination, making it easier for healthcare providers to focus on what truly matters – delivering quality care. Whether you're managing a small clinic or a large hospital, our user-friendly interface and powerful tools will optimize workflows, improve communication, and ensure smooth daily operations. Experience efficient, secure, and innovative healthcare management with this Hospital Management System</p>
+ </div>
+</div>
+<section class="exportDoctor">
+<h2 class="text-center p-3">Expert Doctor</h2>
+<div class="swiper">
+  <div class="swiper-wrapper d-flex " id="owl-demo">
+    {% for doc in doctors %}
+      <div class="swiper-slide">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{doc.profile_pic.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{doc.user.first_name}}</h5>
+           
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+    
+    
+</div>
+</section>
+<section class="gallary" id="gallary">
+ 
+
+ <div class="text-center p-3 pt-4" > 
+    <h3>Our Gallary</h3>
+    <p>View Gallary</p>
+  </div>
+  <div class="gallaryCategory">
+  
+  <button id="AllClickBtn">All</button>
+   <button id="DentalClickBtn">Dental</button>
+   <button id="CardiologyClickBtn">Cardiology</button>
+   <button id="NeurologyClickBtn">Neurology</button>
+   <button id="LaboratyClickBtn">Laboraty</button>
+    
+   <a class="shoeAllImg" href="{% url 'images' %}">Show All images</a>
+  </div>
+  <div class="gallaryImg" id="gallaryImg">
+    
+    
+  </div>
+</section>
+
+<section class="contact" id="contact">
+<h2 class="text-center p-4">Contact Form </h2>
+
+<form action="" method="post">
+  {% csrf_token %}
+  <table class="table">
+    {% for frm in frm_unbound%}
+   <tr>
+    <th>{{frm.label}} : </th>
+    <td  colspan="2">{{frm}}</td>
+   </tr>
+    {% endfor %}
+    <tr>
+      <td></td>
+      <td><button >Send <i class="fa-solid fa-paper-plane "></i></button></td>
+    </tr>
+  </table>
+  
+</form>
+<div class="map">
+<!--  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7007.1757831179175!2d77.30518663705388!3d28.582135274144576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce45e3eccb8a7%3A0xd5eb60e62b19e6ba!2sSector%2015%2C%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1689432261733!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+<!--    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6569082713872!2d37.45467377549123!3d-0.5153835352705153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18262d5184b91225%3A0x372dc4aa9077996b!2sUniversity%20of%20embu%20main%20gate%20(Gate%20A)!5e0!3m2!1sen!2ske!4v1729682505948!5m2!1sen!2ske" width="166%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4680.56777403457!2d37.44993957564343!3d-0.5238613352694881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18262d93a9ec5fcb%3A0x9752deaef48f8778!2sEmbu%20Level%205%20Hospital!5e1!3m2!1sen!2ske!4v1729749388923!5m2!1sen!2ske" width="166%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+</section>
+{% endblock content %}
+
+{% block script %}
+
+<script>
+  const newData = [];
+
+  async function ApiCall() {
+    try {
+      let response = await fetch('http://127.0.0.1:8000/gallery/');
+      let data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error:', error);
+      return [];
+    }
+  }
+
+  async function initialize() {
+    try {
+      const data = await ApiCall();
+      newData.push(...data);
+     
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+  // Call initialize only once
+  initialize();
+
+  document.getElementById('AllClickBtn').addEventListener('click', () => {
+    clearGallery();
+    const filteredData = newData.slice(0,10).map((a) => ShowData(a));
+
+    
+  });
+
+  document.getElementById('DentalClickBtn').addEventListener('click', () => {
+    const filteredData = newData.filter((item) => item.category === 'Dental');
+    clearGallery();
+    filteredData.map((a) => ShowData(a));
+    
+  });
+
+  document.getElementById('NeurologyClickBtn').addEventListener('click', () => {
+    const filteredData = newData.filter((item) => item.category === 'Neurology');
+    clearGallery();
+    filteredData.map(a=>ShowData(a))
+    console.log(filteredData);
+  });
+
+  document.getElementById('CardiologyClickBtn').addEventListener('click', () => {
+    const filteredData = newData.filter((item) => item.category === 'Cardiology');
+    clearGallery();
+    filteredData.map(a=>ShowData(a))
+   
+  });
+
+  document.getElementById('LaboratyClickBtn').addEventListener('click', () => {
+    const filteredData = newData.filter((item) => item.category === 'Laboraty');
+    clearGallery();
+    filteredData.map(a=>ShowData(a))
+    
+  });
+  window.addEventListener('load',()=>{
+    const filteredData = newData.slice(0,10).map((a) => ShowData(a));
+  })
+
+  // Clear the gallery
+  function clearGallery() {
+    let gallaryImg = document.getElementById('gallaryImg');
+    gallaryImg.innerHTML = '';
+  }
+
+  // Show Api Data
+  function ShowData(a) {
+    let img = document.createElement('img');
+    img.src = a.images;
+    let imgdiv = document.createElement('div');
+    imgdiv.append(img);
+    gallaryImg.append(imgdiv);
+  }
+</script>
+
+{% endblock script %}
+
+  </div>

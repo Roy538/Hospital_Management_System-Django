@@ -1,0 +1,24 @@
+{% extends 'hospital/adminDashboard.html' %} {% block adminDashBoard %}
+<div class="admin-card">
+    <div class="cardsApp" >
+       <a href="{% url 'adminPatient' %}">
+        <h6>Patient Record</h6>
+        <i class="fa-solid fa-calendar-days"></i>
+        </div>
+       </a>
+    <div class="cardsApp">
+        <a href="{% url 'adminPatientAdd'%}"><h6>Admit Patient</h6>
+            <i class="fa-solid fa-book-medical"></i></a>
+    </div>
+    <div class="cardsApp">
+       <a href="{% url 'adminPatientApprovel' %}">
+        <h6>Approve Patient</h6>
+        <i class="fa-regular fa-circle-check"></i>
+       </a>
+    </div>
+    <div class="cardsApp">
+        <a href="{% url 'PatientDischarge'%}"><h6>Discharge Patient</h6>
+            <i class="fa-regular fa-circle-check"></i></a>
+    </div>
+</div>
+{% endblock adminDashBoard %}
