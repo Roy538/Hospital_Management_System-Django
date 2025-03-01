@@ -84,7 +84,7 @@ This project is developed for demo purpose and it's not supposed to be used in r
 -[sumitkumar1503](https://github.com/sumitkumar1503/hospitalmanagement) -->
 
 
-## Feedback
+<!-- ## Feedback
 Any suggestion and feedback is welcome. You can message me on facebook
 - [Contact on Linkdin](https://www.linkedin.com/in/MauriceRoy/)
-- [Contact on Email](mailto:roymaurice10@gmail.com)
+- [Contact on Email](mailto:roymaurice10@gmail.com) -->
