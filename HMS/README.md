@@ -1,17 +1,17 @@
 
 # Hospital Management
-![developer](https://img.shields.io/badge/Developed%20By%20%3A-Ashish%20Verma-red)
+<!-- ![developer](https://img.shields.io/badge/Developed%20By%20%3A-Ashish%20Verma-red) -->
 
 
 ---
-## screenshots
+<!-- ## screenshots
 ### Homepage
 ![homepage snap](https://github.com/Ashishverma48/Hospital-Management-System-in-django/blob/master/static/hospital/images/ScreenShot/home1.png)
 ![](https://github.com/Ashishverma48/Hospital-Management-System-in-django/blob/master/static/hospital/images/ScreenShot/home3.png)
 ![](https://github.com/Ashishverma48/Hospital-Management-System-in-django/blob/master/static/hospital/images/ScreenShot/home4.png)
 ### Admin Dashboard
 ![dashboard snap](https://github.com/Ashishverma48/Hospital-Management-System-in-django/blob/master/static/hospital/images/ScreenShot/admin.png)
-### Invoice
+### Invoice -->
 
 ### Doctor list
 
@@ -80,11 +80,11 @@ https://myaccount.google.com/lesssecureapps
 ## Disclaimer
 This project is developed for demo purpose and it's not supposed to be used in real application.
 
-## Inspired By
--[sumitkumar1503](https://github.com/sumitkumar1503/hospitalmanagement)
+<!-- ## Inspired By
+-[sumitkumar1503](https://github.com/sumitkumar1503/hospitalmanagement) -->
 
 
 ## Feedback
 Any suggestion and feedback is welcome. You can message me on facebook
-- [Contact on Linkdin](https://www.linkedin.com/in/ashishverma48/)
-- [Contact on Email](mailto:ashishkv845@gmail.com)
+- [Contact on Linkdin](https://www.linkedin.com/in/MauriceRoy/)
+- [Contact on Email](mailto:roymaurice10@gmail.com)
